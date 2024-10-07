@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    font-family: 'IBM Plex Mono';
+}
+
+.signup-message {
+  text-align: center;
+  color: #808080;
+  font-size: 15px;
+  font-family: 'IBM Plex Mono';
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="radio"] {
+    margin-right: 1px;
+}
+
+form label {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.select-button {
+  height: 50px;
+  width: calc(80% + 40px);
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+}
+
+.submit-button {
+  height: 50px;
+  background-color: #3769cc;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 95%;
+  color: white;
+}
+
+form button:hover {
+    background: #555;
+}
