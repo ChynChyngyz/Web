@@ -1,77 +1,55 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style_log.css' %}">
-    <title>Регистрация</title>
+    <title>Sign Up</title>
 </head>
 <body>
     <header>
-        <h1 style="color: white;"> <img src="static/images/wistia.png" height="50"> WISTIA</h1>
+        <div class="logo">
+            <h1 style="color: white;"> <img src="static/images/wistia.png" height="50"> WISTIA</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="/">Главная</a></li>
-                <li><a href="log">Логин</a></li>
-                <li><a href="wistia">Регистрация Wistia</a></li>
+                <li><a href="login">Логин</a></li>
             </ul>
         </nav>
     </header>
-    <form action="" method="post">
-        <div>
-            <input type="text" name="name" placeholder="Ваше имя" required>
+
+    <main>
+        <div class="signup-message">
+            <h1 style="center">Зарегистрируйте бесплатную учетную запись Wistia</h1>
+            <p style="center">Используйте Wistia и все ее функции бесплатно, навсегда!</p>
         </div>
-        <div>
-            <input type="email" name="email" placeholder="Ваше e-mail" required>
-        </div>
-        <div>
-            <input type="tel" name="phone" placeholder="Ваш телефон" required>
-        </div>
-        <div>
-            <input type="password" name="password" placeholder="Ваше пароль" required>
-        </div>
-        <div>
-            <select name="role" required>
-                <option value="" disabled selected>Выберите роль</option>
-                <option value="students">Students</option>
-                <option value="teachers">Teachers</option>
-            </select>
-        </div>
-        <div>
-            <input type="radio" name="a" id="s">
-            <label for="a">Конечно</label>
-        </div>
-        <div>
-            <input type="radio" name="a" id="d">
-            <label for="a">Может быть</label>
-        </div>
-        <div>
-            <input type="radio" name="a" id="f">
-            <label for="a">Не уверен</label>
-        </div>
-        <div>
-            <select name="role" required>
-                <option value="" disabled selected>Что-то</option>
-                <option value="students">Что-то</option>
-                <option value="teachers">Что-то</option>
-            </select>
-        </div>
-        <div>
-            <input type="radio" name="a" id="a">
-            <label for="a">Front</label>
-        </div>
-        <div>
-            <input type="radio" name="a" id="c">
-            <label for="a">Back</label>
-        </div>
-        <div>
-            <input type="radio" name="a" id="b">
-            <label for="a">Front-Back</label>
-        </div>
-        <div>
-            <button class="submit-button" type="submit">Регистрация</button>
-        </div>
-    </form>
+        <form action="" method="post">
+            <div class="name">
+                <input type="text" placeholder="Имя">
+            </div>
+            <div class="name">
+                <input type="text" placeholder="Фамилия">
+            </div>
+
+            <div class="email">
+                <input type="email" placeholder="Ваша e-mail почта">
+            </div>
+            <div class="password">
+                <input type="password" placeholder="Пароль">
+            </div>
+            <div>
+                <select name="select" class="select-button">
+                    <option value="" selected disabled hidden>Как вы впервые услышали о Wistia?</option>
+                    <option value="value1">чето 1</option>
+                    <option value="value2">чето 2</option>
+                </select>
+            </div>
+            <div class="submit">
+                <input class="submit-button" type="submit" value="Создать аккаунт">
+            </div>
+        </form>
+    </main>
 </body>
 </html>
