@@ -5,6 +5,8 @@ app_name = 'web'
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('registration', views.registration, name="registration"),
-    path('login', views.login, name="login")
+    path('auth', views.auth, name='auth'),
+    path('registration/', views.registration_view, name='registration'),
+    # path('registration', views.registration, name="registration"),
+    # path('login', views.login, name="login")
 ]
