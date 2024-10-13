@@ -55,15 +55,17 @@ class RegisterView(View):
 class CustomLoginView(LoginView):
     form_class = LoginForm
 
+    def get_success_url(self):
+        return reverse_lazy('web:users-home')
+
     def form_valid(self, form):
         remember_me = form.cleaned_data.get('remember_me')
 
         if not remember_me:
             self.request.session.set_expiry(0)
-
             self.request.session.modified = True
 
-        return super(CustomLoginView, self).form_valid(form)
+        return super().form_valid(form)
 
 
 class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
