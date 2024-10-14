@@ -65,6 +65,7 @@ header .header-nav ul {
     display: flex;
     text-align: center;
 }
+
 #menu {
     display: none;
 }
@@ -98,6 +99,7 @@ header .header-nav ul {
     color: #aaa;
     /*font-size: 1vw;*/
 }
+
 #shop-icon {
     font-size: 1vw;
 }
@@ -179,7 +181,6 @@ header .header-nav ul {
     text-align: center;
     transition: background-color 0.3s;
 }
-
 
 .button--flex-button2 {
     font-size: 1.2vw;

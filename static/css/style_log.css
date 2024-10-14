@@ -1,16 +1,41 @@
 /* Общие стили */
 body {
     font-family: Arial, sans-serif;
-    background-color: rgba(15, 4, 28, 1);
+    background-color: rgba(15, 4, 28, 1) !important;
+}
+
+.row {
+    /*background-color: rgba(35, 43, 55, 0.75);*/
+
+}
+
+.background-line {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1400px;
     margin: auto;
     padding: 20px;
 }
 
+.p-3 {
+    width: 900px;
+}
+
 .navbar {
+    display: flex;
     margin-bottom: 20px;
 }
 
@@ -39,14 +64,22 @@ body {
     margin: -0.5rem -0.5rem -0.5rem auto;
 }
 
-/* Стили для формы */
 form {
     margin-top: 20px;
+}
+
+.col-lg-5 {
+    background-color: rgba(35, 43, 55, 0.75);
+}
+
+.mb-3, .my-3 {
+    background-color: rgba(35, 43, 55, 0.75) !important;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
+    background-color: rgba(15, 4, 28, 1);
     width: 100%;
     padding: 10px;
     margin: 5px 0 20px;
@@ -82,4 +115,93 @@ h1, h2, h3 {
         display: block;
         margin: 10px 0;
     }
+}
+
+.container {
+    background-color: rgba(35, 43, 55, 0.75);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+.footer-limit {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    /*flex-wrap: nowrap;*/
+    /*gap: 1%;*/
+}
+#sub {
+    max-width: 30%;
+}
+
+.footer-block {
+/*    flex: 0 0 20%;*/
+    max-width: 20%;
+    /*margin: 3%;*/
+    min-width: 5%;
+}
+
+.footer-left {
+    max-width: 30%;
+    /*margin-left: 5%;*/
+}
+
+.footer-left .logo {
+    width: 80%;
+}
+
+.icons {
+    margin: 5% 0;
+}
+
+.icons i {
+    font-size: 2vw;
+    margin: 0 5%;
+    cursor: pointer;
+}
+
+.footer-name-menu {
+    font-weight: bold;
+    font-size: 1.5vw;
+    margin-bottom: 5%;
+}
+
+.footer-a {
+    color: #bbb;
+    text-decoration: none;
+    display: block;
+    margin: 2% 0;
+}
+
+.footer-a:hover {
+    color: #fff;
+}
+
+
+.input-group {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-radius: 7%;
+
+}
+
+.input-group .form-control {
+    padding: 5%;
+    background-color: #1d112a;
+}
+
+.input-group input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group .btn {
+    background-color: rgba(61, 222, 237, 1);
+    color: rgba(0,0,0);
+    cursor: pointer;
 }
