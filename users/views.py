@@ -5,7 +5,6 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views import View
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LogoutView
 
 from .forms import RegisterForm, LoginForm, UpdateUserForm, UpdateProfileForm
 
@@ -40,10 +39,6 @@ class RegisterView(View):
             return redirect(to='login')
 
         return render(request, self.template_name, {'form': form})
-
-
-class CustomLogoutView(LogoutView):
-    next_page = ''
 
 
 class CustomLoginView(LoginView):

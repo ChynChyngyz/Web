@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 {% load static %}
 <html lang="en">
 
@@ -22,15 +23,15 @@
             <div class="d-flex header-content">
                 <div class="header-nav">
                     <ul class="d-flex flex-center">
-                        <li><a href="home">Home</a></li>
-                        <li><a href="#">Catalog</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Features</a></li>
+                        <li><a href="home">{{ header_text_home.content }}</a></li>
+                        <li><a href="#">{{ header_text_catalog.content }}</a></li>
+                        <li><a href="#">{{ header_text_contact.content }}</a></li>
+                        <li><a href="#">{{ header_text_features.content }}</a></li>
                     </ul>
                 </div>
                 <div class="header-log">
                     <i class="fa-solid fa-bars" id="menu"></i>
-                    <img src="{% static 'images/logo.png' %}"   class="img-logo">
+                    <img src="{{ logo.image.url }}" class="img-logo">
                 </div>
                 <div class="header-search">
                     <div class="search-container">
@@ -46,28 +47,28 @@
     </div>
 </header>
 <main>
-    <section class="limit-main" id="home">
+    <section class="limit-main section" id="home">
         <div class="a2">
-            <img src="{% static 'images/bg_effect.png' %}"   class="background-line">
+            <img src="{{ background.image.url }}" class="background-line">
         </div>
         <div>
             <div class="home__container container grid">
                 <div class="home__data">
                     <div class="home__header">
-                        <h1 class="home__title">VIRTUAL HEADSET</h1>
+                        <h1 class="home__title">{{ home_title.content }}</h1>
                     </div>
                     <div>
-                        <h2 class="home__title2">Experience a new dimension of reality</h2>
+                        <h2 class="home__title2">{{ home_text.content }}</h2>
                     </div>
 
                     <div class="home__footer">
                         <div class="feature-item">
-                            <img src="{% static 'images/star.png' %}" alt="Star" class="star-img"> Step into the future with our virtual headset, come to life right before your eyes
+                            <img src="{% static 'images/star.png' %}" alt="Star" class="star-img">{{ home_tex2.content }}
                         </div>
                         <div class="buttons-sec1">
                             <br>
-                            <a href="#" class="button--flex-button1">Visit Store<i class="arrow right"></i></a>
-                            <a href="#" class="button--flex-button2">Explore</a>
+                            <a href="#" class="button--flex-button1">{{ button_text1.content }}<i class="arrow right"></i></a>
+                            <a href="#" class="button--flex-button2">{{ button_text2.content }}</a>
                         </div>
                         <div>
                             <br>
@@ -82,11 +83,11 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="{% static 'images/image.png' %}" alt="Virtual Headset" class="image-img">
-                    <img src="{% static 'images/man.png' %}" class="image-img-man">
+                    <img src="{{ man_with_items.image.url }}" alt="Virtual Headset" class="image-img">
+                    <img src="{{ man.image.url }}" class="image-img-man">
                     <div class="icons1">
-                        <div class="icon"><img src="{% static 'images/im1.png' %}"   class="ic"><p>Enhanced Education</p></div>
-                        <div class="icon"><img src="{% static 'images/im2.png' %}"   class="ic"><p>Training and Simulation</p></div>
+                        <div class="icon"><img src="{% static 'images/im1.png' %}" class="ic"><p>Enhanced Education</p></div>
+                        <div class="icon"><img src="{% static 'images/im2.png' %}" class="ic"><p>Training and Simulation</p></div>
                     </div>
                 </div>
             </div>
@@ -94,39 +95,24 @@
 
     </section>
 
-    <section class="limit-main" id="home1">
+    <section class="limit-main section" id="home1">
         <div class="a2">
             <div class="home__container2 container grid">
                 <div class="image2">
-                    <img src="{% static 'images/image2.png' %}" alt="Virtual Headset" class="image2-img">
+                    <img src="{{ vh.image.url }}" alt="Virtual Headset" class="image2-img">
                 </div>
                 <div class="home__data2">
                     <div class="home__header2">
-                        <h1 class="home__title_second">Our Virtual Headsets
-                            Shine with Unique
-                            Features!
+                        <h1 class="home__title_second">{{ title_features.content }}
                         </h1>
                     </div>
                     <div class="features-container">
                         <div class="feature-list">
+                            {% for fact in features %}
                             <div class="feature-item" id="fact-1">
-                                <img src="{% static 'images/star2.png' %}" alt="Star" class="star-img"> High-resolution OLED or LCD screens: Provide sharp and clear visuals
+                                <img src="{% static 'images/star2.png' %}" alt="Star" class="star-img">{{ fact.content }}
                             </div>
-                            <div class="feature-item" id="fact-2">
-                                <img src="{% static 'images/star2.png' %}" alt="Star" class="star-img"> Low latency for seamless experience
-                            </div>
-                            <div class="feature-item" id="fact-3">
-                                <img src="{% static 'images/star2.png' %}" alt="Star" class="star-img"> Wide field of view for immersion
-                            </div>
-                            <div class="feature-item" id="fact-4">
-                                <img src="{% static 'images/star2.png' %}" alt="Star" class="star-img"> Adjustable straps for comfort
-                            </div>
-                            <div class="feature-item" id="fact-5">
-                                <img src="{% static 'images/star2.png' %}" alt="Star" class="star-img"> Built-in audio for enhanced experience
-                            </div>
-                            <div class="feature-item" id="fact-6">
-                                <img src="{% static 'images/star2.png' %}" alt="Star" class="star-img"> Multiple connectivity options
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="home__footer_second">
@@ -145,22 +131,23 @@
                 <div class="div1">
                     <div class="home__data3">
                         <div class="home__header3">
-                            <h6 class="home__title3">JANE WILSON, GAMING CREATOR</h6>
+                            <h6 class="home__title3">{{  jane.content }}</h6>
                         </div>
                         <div class="home__footer">
                             <div class="feature-item-3">
-                                <img src="{% static 'images/star.png' %}" alt="Star" class="star-img"> A virtual headset creator is an individual or company that specializes in designing and manufacturing virtual reality headsets, also known as VR headsets.
+                                <img src="{% static 'images/star.png' %}" alt="Star" class="star-img"> {{ des.content }}
                             </div>
                             <div class="button-container1">
                                 <a href="#" class="button-blog">Read my blog</a>
                             </div>
-                            <div class="img-users"><img src="{% static 'images/users.png' %}"   class="users"><h6>+258k Views</h6></div>
+                            <div class="img-users"><img src="{{ users.image.url }}" class="users"><h6>{{ view.content }}</h6></div>
                         </div>
                     </div>
                 </div>
                 <div class="images">
-                    <img src="{% static 'images/women.png' %}" alt="Virtual Headset" class="image3-img">
-                    <img src="{% static 'images/comment.png' %}" alt="Virtual Headset" class="image4-img">
+                    <img src="{{ woman.image.url}}" alt="Virtual Headset" class="image3-img">
+                    <img src="{{ comment.image.url }}" alt="Virtual Headset" class="image4-img">
+                    <img src="{{ woman_with_comment.image.url }}" alt="Virtual Headset" class="image5-img">
                 </div>
             </div>
         </div>
@@ -168,10 +155,10 @@
 
 <!--    -->
 
-    <section >
+    <section class="section">
         <div class="game-title">
             <h1 class="top">Top Games</h1>
-            <p id="p-text">If you buy video 2 games, you will receive 1 video game for free, along with a 50% discount.</p>
+            <p id="p-text">{{ discount.content }}</p>
             <div class="button-container">
                 <button class="button" id="leftBtn">
                     <i class="fa-solid fa-arrow-left"></i>
@@ -183,22 +170,9 @@
 
         </div>
         <div class="game" id="gameContainer">
-            <div><img src="{% static 'images/game1.png' %}"  ><p>Horizon : Call of the mountain</p></div>
-            <div><img src="{% static 'images/game2.png' %} "><p>Half - Life : ALYX</p></div>
-            <div><img src="{% static 'images/game3.png' %} "><p>Fight Night Champion</p></div>
-            <div><img src="{% static 'images/game4.png' %} "><p>Call of Duty : Coold War</p></div>
-            <div><img src="{% static 'images/game1.png' %}"  ><p>Horizon : Call of the mountain</p></div>
-            <div><img src="{% static 'images/game2.png' %} "><p>Half - Life : ALYX</p></div>
-            <div><img src="{% static 'images/game3.png' %} "><p>Fight Night Champion</p></div>
-            <div><img src="{% static 'images/game4.png' %} "><p>Call of Duty : Coold War</p></div>
-            <div><img src="{% static 'images/game1.png' %}"  ><p>Horizon : Call of the mountain</p></div>
-            <div><img src="{% static 'images/game2.png' %} "><p>Half - Life : ALYX</p></div>
-            <div><img src="{% static 'images/game3.png' %} "><p>Fight Night Champion</p></div>
-            <div><img src="{% static 'images/game4.png' %} "><p>Call of Duty : Coold War</p></div>
-            <div><img src="{% static 'images/game1.png' %}"  ><p>Horizon : Call of the mountain</p></div>
-            <div><img src="{% static 'images/game2.png' %} "><p>Half - Life : ALYX</p></div>
-            <div><img src="{% static 'images/game3.png' %} "><p>Fight Night Champion</p></div>
-            <div><img src="{% static 'images/game4.png' %} "><p>Call of Duty : Coold War</p></div>
+            {% for game in games %}
+                <div><img src="{{ game.image.url }}" alt="{{ game.title }}"><p>{{ game.title }}</p></div>
+            {% endfor %}
         </div>
         <script class="button-scroll">
 const leftBtn = document.getElementById('leftBtn');
@@ -257,62 +231,48 @@ gameContainer.addEventListener('touchend', () => {
 });
 </script>
     </section>
-
     <section class="section">
         <div class="FAQ">
             <h1 class="name-faq">F.A.Q.</h1>
-            <button class="question-btn" onclick="toggleAnswer('answer1')">What are the different types of virtual headsets available?
+            {% for faq in faqs %}
+            <button class="question-btn" onclick="toggleAnswer('{{ faq.id }}')">{{ faq.question}}
                 <i class="fa-solid fa-arrow-down"></i>
             </button>
-            <div class="answer" id="answer1">
+            <div class="answer" id="{{ faq.id }}">
                 <i class="fa-solid fa-arrow-up"></i>
-                <p>How does a virtual headset work?<br><br>Virtual headsets are equipped with various sensors to track the user's movements. These sensors can include accelerometers, gyroscopes, and sometimes external cameras or base stations. They constantly monitor the position and orientation of the headset and sometimes the user's hand controllers. <br><br>The headset has one or two high-resolution displays, one for each eye, positioned in front of the user's eyes. These displays show stereoscopic 3D images, creating a sense of depth and immersion. Between the displays and the user's eyes, help focus the images and adjust them for the user's field of view.</p>
+                <p>{{ faq.answer}}</p>
             </div>
-            <button class="question-btn" onclick="toggleAnswer('answer2')">Do I need a powerful computer to use a virtual headset?
-                <i class="fa-solid fa-arrow-down"></i>
-            </button>
-            <div class="answer" id="answer2">
-                <i class="fa-solid fa-arrow-up"></i>
-                <p>Офкурс</p>
-            </div>
-            <button class="question-btn" onclick="toggleAnswer('answer3')">What are the main applications of virtual headsets?
-                <i class="fa-solid fa-arrow-down"></i>
-            </button>
-            <div class="answer" id="answer3">
-                <i class="fa-solid fa-arrow-up"></i>
-                <p>Да я ХЗ</p>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
 </main>
 
 <footer>
-
     <div class="container">
         <div class="footer-limit">
             <div class="row">
                 <div class="footer-block footer-left" id="first-block">
-                    <img class="logo" src="{% static 'images/logo.png' %}"><br>
+                    <img class="logo" src="{{ logo.image.url }}"><br>
                     <div class="icons">
                         <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-square-instagram"></i>
+                        <i class="fa-brands fa-instagram"></i>
                         <i class="fa-brands fa-discord"></i>
                         <i class="fa-brands fa-facebook"></i>
                     </div>
-                    <p class="footer-a">+996 XXX XXX XXX</p>
+                    <p class="footer-a">{{ contact.content }}</p>
                 </div>
                 <div class="footer-block" id="second-block">
                     <p class="footer-name-menu">Menu</p><br>
-                    <a class="footer-a" href="home">Home</a><br>
-                    <a class="footer-a" href="">Catalog</a><br>
-                    <a class="footer-a" href="">Features</a><br>
-                    <a class="footer-a" href="">Cantact</a><br>
+                    <a class="footer-a" href="">{{ header_text_home.content }}</a><br>
+                    <a class="footer-a" href="">{{ header_text_catalog.content }}</a><br>
+                    <a class="footer-a" href="">{{ header_text_features.content }}</a><br>
+                    <a class="footer-a" href="">{{ header_text_contact.content }}</a><br>
                 </div>
                 <div class="footer-block" id="third-block">
                     <p class="footer-name-menu">Company</p><br>
                     <a class="footer-a" href="login">Login</a><br>
-                    <a class="footer-a" href="register">Sing up</a><br>
+                    <a class="footer-a" href="registration">Sing up</a><br>
                     <a class="footer-a" href="">Privacy</a><br>
                     <a class="footer-a" href="">Product</a><br>
                 </div>
